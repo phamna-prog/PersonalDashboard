@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Không gian cá nhân · Phạm Thị Ngọc Anh</title>
+<style>:root{--ink:#392a32;--muted:#957e89;--rose:#cf4e7b;--rose-soft:#e990ad;--glass:rgba(255,252,253,.78);--line:rgba(255,255,255,.94);--shadow:0 18px 45px rgba(152,75,105,.09);--radius:25px;--gap:16px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{margin:0;color:var(--ink);font-family:"Aptos","Segoe UI","Microsoft YaHei UI",system-ui,sans-serif;background:radial-gradient(ellipse at 10% 8%,rgba(255,255,255,.96),transparent 34%),radial-gradient(ellipse at 88% 12%,rgba(249,189,211,.48),transparent 33%),radial-gradient(ellipse at 76% 75%,rgba(255,222,232,.72),transparent 34%),linear-gradient(135deg,#fff1f3 0%,#fce7ef 48%,#f8e6ed 100%);position:relative;min-height:100vh}
+button,input{font:inherit;color:inherit}button{cursor:pointer}
+.app-shell{min-height:100vh;position:relative}
+.side-nav{position:fixed;inset:16px auto 16px 16px;width:144px;padding:22px 14px;border:1px solid rgba(255,255,255,.82);border-radius:24px;background:rgba(255,250,252,.78);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:5;overflow-y:auto}
+.brand{font-size:11px;font-weight:750;padding:3px 7px 20px;letter-spacing:.02em;line-height:1.45}.brand small{display:block;margin-top:4px;color:#b28e9b;font-size:9px;font-weight:500}
+main{max-width:1330px;margin-left:176px;padding:26px 30px 150px;min-width:0}
+.topbar{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;min-height:30px;margin-bottom:20px}.date-space{width:160px;min-height:1px}.top-tools{display:flex;align-items:center;gap:12px}.search-box{width:min(300px,38vw);height:38px;display:flex;align-items:center;gap:10px;padding:0 13px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.62);color:var(--muted)}.search-box input{width:100%;border:0;outline:0;background:transparent;font-size:12px}.search-box input::placeholder{color:#9c8b96}.icon-button,.avatar{width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.68);color:var(--rose)}.avatar{border-radius:50%;font-size:11px;font-weight:700}
+svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.greeting{position:relative;isolation:isolate;overflow:hidden;padding:37px 42px 34px;min-height:284px;margin:0 0 24px;border:1px solid rgba(255,255,255,.96);border-radius:34px;background:linear-gradient(118deg,rgba(255,255,255,.91),rgba(255,247,250,.77) 55%,rgba(255,231,240,.8));box-shadow:0 22px 55px rgba(167,85,117,.105)}.greeting:before{content:"";position:absolute;z-index:-1;width:390px;height:390px;right:7%;bottom:-255px;border-radius:50%;background:radial-gradient(circle,rgba(231,133,166,.22),rgba(250,207,222,.16) 45%,transparent 72%)}.greeting:after{content:"✳";position:absolute;z-index:-1;right:26%;bottom:-49px;color:rgba(221,109,151,.075);font-size:260px;line-height:1;transform:rotate(-12deg);pointer-events:none}
+.hero-kicker{display:block;margin:2px 0 16px;color:#c25a7e;font-size:11px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.greeting h1{max-width:calc(100% - 285px);margin:3px 0 11px;color:#382933;font-size:clamp(40px,5vw,54px);font-weight:760;letter-spacing:-.045em;line-height:1.06}.greeting h1 span{background:linear-gradient(100deg,#c84f79,#e38bab);-webkit-background-clip:text;background-clip:text;color:transparent}.greeting p{max-width:calc(100% - 285px);margin:0;color:#796861;font-size:14px;line-height:1.65}.greeting-card{position:absolute;right:0;top:38px;max-width:260px;padding:16px 20px;border:1px solid var(--line);border-radius:22px;background:var(--glass);box-shadow:0 16px 36px rgba(187,94,130,.12);backdrop-filter:blur(18px);z-index:1}.greeting-card b{display:block;margin-bottom:7px;font-size:13px}.greeting-card span{font-size:11px;color:var(--muted);line-height:1.6}.hero-quote{position:relative;z-index:1;max-width:calc(100% - 285px);margin:18px 0 0;padding:11px 15px;border-left:2px solid #df7298;border-radius:0 13px 13px 0;background:rgba(255,255,255,.53);color:#b75178;font-size:12px;font-style:italic;line-height:1.6}
+.quick-entry{margin:4px 0 48px}.entry-field{display:flex;align-items:center;gap:12px;padding:7px 8px 7px 18px;min-height:52px;border:1px solid rgba(255,255,255,.98);border-radius:18px;background:rgba(255,250,252,.9);box-shadow:0 14px 34px rgba(167,85,117,.09);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}.entry-field:focus-within{border-color:#eda5bd;box-shadow:0 0 0 4px rgba(222,109,150,.1),0 14px 34px rgba(167,85,117,.09)}.entry-field input{min-width:0;flex:1;border:0;outline:0;background:transparent;font-size:13px}.entry-field input::placeholder{color:#9c8b83}.plus-button{width:38px;height:38px;display:grid;place-items:center;border:0;border-radius:12px;background:linear-gradient(145deg,#e6779d,#d85683);box-shadow:0 7px 15px rgba(207,78,123,.22);color:white}.plus-button svg{width:19px;height:19px}.quick-hint{margin:10px 12px 0;color:var(--muted);font-size:11px}.quick-hint span{color:#806f78}
+.block{scroll-margin-top:32px;margin-bottom:54px}.metrics-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{position:relative;overflow:hidden;min-width:0;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(255,250,252,.75));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:var(--shadow);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.card:hover{transform:translateY(-3px);box-shadow:0 20px 42px rgba(173,77,116,.12);border-color:#fff}.metric-card{min-height:174px;padding:20px 19px}.metric-card:before{content:"";position:absolute;top:0;left:20px;right:20px;height:2px;border-radius:0 0 5px 5px;background:linear-gradient(90deg,#e990ad,rgba(233,144,173,0))}.metric-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:14px;color:#85746d}.metric-heading h3{margin:0;font-size:11px;font-weight:600;line-height:1.4}.metric-icon{flex:none;color:var(--rose)}.metric-value{font-size:31px;line-height:1.1;font-weight:760;letter-spacing:-.04em;overflow-wrap:anywhere}.metric-value small{font-size:13px;letter-spacing:0;color:#6e5f59;font-weight:550}.metric-target{margin-top:3px;color:#6e5f59;font-size:12px}.metric-explanation{margin:12px 0 0;color:#84736c;font-size:11px;line-height:1.55}.progress{height:4px;margin-top:13px;border-radius:9px;background:rgba(120,89,72,.11);overflow:hidden}.progress i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#d95583,#ee9bb7)}
+.modules-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.module-card{min-height:206px;padding:20px 19px}.module-card.featured{grid-column:span 2}.module-card h3{margin:0 0 7px;font-size:14px;font-weight:760}.module-purpose{margin:0 0 14px;padding:0 0 12px;border-bottom:1px solid rgba(110,80,64,.1);color:#84736c;font-size:11px;line-height:1.55}.detail-list{display:grid;gap:0;margin:0;padding:0;list-style:none}.detail-list li{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-top:1px solid rgba(110,80,64,.1);font-size:11px;line-height:1.45}.detail-list li:first-child{border-top:0}.detail-list li:before{content:"";width:6px;height:6px;flex:none;margin-top:4px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 4px rgba(217,94,136,.09)}
+.closing-summary{margin:0 2px 54px;color:#84736c;font-size:12px;line-height:1.75}
+.nav-group{display:grid;gap:5px}.nav-link{display:flex;align-items:center;gap:9px;min-height:39px;padding:8px 7px;border-radius:12px;color:#806f78;text-decoration:none;font-size:11px;line-height:1.35;transition:background .18s,color .18s}.nav-link svg{width:20px;height:20px;padding:2px;flex:none}.nav-link:hover{background:rgba(255,255,255,.58);color:var(--ink)}.nav-link.active{background:linear-gradient(100deg,rgba(255,255,255,.98),rgba(255,235,243,.9));color:var(--rose);font-weight:700;box-shadow:0 6px 20px rgba(204,79,123,.08)}.nav-link.active svg{color:var(--rose)}.nav-divider{height:1px;margin:15px 5px;background:rgba(130,98,82,.13)}
+.quick-access{position:fixed;z-index:6;bottom:17px;left:calc(50% + 88px);transform:translateX(-50%);display:flex;gap:8px;padding:9px;width:min(650px,calc(100% - 210px));border:1px solid rgba(255,255,255,.92);border-radius:22px;background:rgba(255,248,251,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 12px 36px rgba(80,54,40,.1)}.access-link{flex:1;min-width:0;padding:9px 12px;border-radius:15px;color:var(--ink);text-decoration:none;transition:background .18s,transform .18s}.access-link:hover{background:rgba(255,230,239,.8);transform:translateY(-2px)}.access-link strong{display:block;margin-bottom:4px;font-size:11px}.access-link small{display:block;color:var(--muted);font-size:10px;line-height:1.4}
+.animate-in{animation:enter .55s ease both}@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1000px){.side-nav{width:128px}.brand{font-size:10px}main{margin-left:158px;padding-right:22px}.metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.modules-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.module-card.featured{grid-column:span 2}.greeting{min-height:0;padding:30px;margin:18px 0 22px}.greeting-card{position:static;margin-top:20px;width:max-content;max-width:100%}.greeting h1,.greeting p,.hero-quote{max-width:100%}.greeting:after{right:2%;font-size:190px}.quick-entry{margin-bottom:42px}}
+@media(max-width:650px){.side-nav{position:sticky;inset:0 auto auto;width:auto;max-height:none;margin:0;padding:10px 12px;border-radius:0 0 18px 18px;display:flex;align-items:center;gap:8px;overflow-x:auto;overflow-y:hidden;background:rgba(255,250,252,.92)}.brand{flex:none;padding:0 8px 0 2px;white-space:nowrap}.nav-group{display:flex;gap:4px;flex:none}.nav-divider{height:22px;width:1px;margin:0 3px;flex:none}.nav-link{flex:none;white-space:nowrap;padding:8px 9px}.nav-link svg{width:20px;height:20px}.main{margin:0}main{margin:0;padding:16px 16px 115px}.topbar{font-size:11px}.date-space{width:1px}.top-tools{gap:8px}.search-box{width:auto;flex:1;max-width:300px}.greeting{padding:26px 22px;margin:14px 0 20px;border-radius:27px}.hero-kicker{font-size:9px;margin-bottom:13px}.greeting:after{right:-4%;bottom:-30px;font-size:145px}.greeting h1{font-size:40px;max-width:100%}.greeting p,.hero-quote{max-width:100%;font-size:13px}.greeting-card{max-width:none;width:100%}.quick-entry{margin-bottom:38px}.metrics-grid{gap:11px}.metric-card{min-height:150px;padding:16px 14px;border-radius:21px}.metric-value{font-size:25px}.modules-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.module-card{min-height:0;padding:16px 14px;border-radius:21px}.module-card.featured{grid-column:span 2}.block{margin-bottom:42px}.closing-summary{margin-bottom:42px}.quick-access{left:10px;right:10px;bottom:10px;width:auto;transform:none;gap:3px;padding:7px;border-radius:19px}.access-link{padding:8px 9px}.access-link strong{font-size:10px}.access-link small{font-size:9px}}
+@media(max-width:390px){.metrics-grid,.modules-grid{grid-template-columns:1fr}.module-card.featured{grid-column:auto}.metric-card{min-height:0}.greeting h1{font-size:36px}.top-tools{gap:7px}.search-box{padding:0 9px}.quick-access{gap:2px;padding:6px}.access-link{padding:8px 5px}.access-link strong{font-size:9px}.access-link small{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}</style>
+</head>
+<body>
+<div class="app-shell">
+<aside class="side-nav" aria-label="Điều hướng chính">
+  
+    <div class="brand">PHẠM THỊ NGỌC ANH<small>Bàn làm việc cá nhân</small></div>
+  <nav class="nav-group" aria-label="Thường dùng">
+    <a class="nav-link" href="#overview"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"></rect><rect x="13" y="3" width="8" height="5" rx="2"></rect><rect x="13" y="10" width="8" height="11" rx="2"></rect><rect x="3" y="13" width="8" height="8" rx="2"></rect></svg><span>Dashboard — Tổng quan</span></a>
+    <a class="nav-link" href="#study-planner"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg><span>Study Planner — Kế hoạch học tập</span></a>
+    <a class="nav-link" href="#tasks"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6 2 2 4-4M8 13l2 2 4-4M8 20l2 1 4-4"></path><path d="M17 7h4M17 14h4M17 21h4"></path></svg><span>Tasks — Công việc cần làm</span></a>
+    <a class="nav-link" href="#ielts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path></svg><span>IELTS & English — Học tiếng Anh</span></a>
+  </nav>
+  <div class="nav-divider" role="separator"></div>
+  <nav class="nav-group" aria-label="Khám phá thêm">
+    <a class="nav-link" href="#career"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"></rect><path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2"></path></svg><span>Logistics Career — Định hướng nghề nghiệp</span></a>
+    <a class="nav-link" href="#personal-finance"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="15" rx="2"></rect><path d="M7 6V4h10v2M7 11h10M7 15h6"></path></svg><span>Personal Finance — Quản lý tài chính</span></a>
+    <a class="nav-link" href="#habits-wellness"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-4.4-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.6-8 11-8 11Z"></path></svg><span>Habits & Wellness — Thói quen và sức khỏe</span></a>
+    <a class="nav-link" href="#quick-entry"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6M8 13h8M8 17h8"></path></svg><span>Notes — Ghi chú và tài liệu học tập</span></a>
+  </nav>
+</aside>
+
+<main>
+  <header class="topbar" id="dashboard">
+    <div class="date-space" aria-label=""></div>
+    <div class="top-tools">
+      <label class="search-box" aria-label="Tìm kiếm">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
+        <input type="search" placeholder="Tìm kiếm..." aria-label="Tìm kiếm">
+      </label>
+      <button class="icon-button" type="button" aria-label="Thông báo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg></button>
+      <div class="avatar" aria-label="Phạm Thị Ngọc Anh">NA</div>
+    </div>
+  </header>
+
+  <section class="greeting" aria-labelledby="greeting-title">
+    <span class="hero-kicker">PHẠM THỊ NGỌC ANH</span>
+    <h1 id="greeting-title">Xin chào, <span>Ngọc Anh.</span></h1>
+    <p>Mong hôm nay sẽ là một ngày thật nhẹ nhàng.</p>
+    <div class="greeting-card"><b>Không gian của bạn</b><span>Tôi là sinh viên ngành Quản trị kinh doanh, đang học tập và phát triển kiến thức về Logistics và Quản lý chuỗi cung ứng.</span></div>
+    <p class="hero-quote">Mỗi bước nhỏ bạn dành cho việc học và phát triển bản thân đều đang đưa bạn đến gần hơn với những điều mình mong muốn.</p>
+  </section>
+
+  <section class="quick-entry" id="quick-entry" aria-label="Ghi nhanh">
+    <form class="entry-field" id="quick-entry-form" aria-label="Ghi nhanh">
+      <input id="quick-entry-input" type="text" aria-label="Ghi nhanh" placeholder="Bạn muốn ghi lại điều gì?" required>
+      <button class="plus-button" type="submit" aria-label="Thêm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+    </form>
+    <p class="quick-hint">Thao tác nhanh: <span>Ghi một khoản</span> · <span>Ghi thời gian học</span> · <span>Viết ý tưởng</span> <span class="quick-entry-status" id="quick-entry-status" role="status" aria-live="polite"></span></p>
+  </section>
+
+  <section class="block" id="overview" aria-label="Bốn thẻ hàng trên">
+    
+    <div class="metrics-grid">
+      <article class="card metric-card" id="study-time">
+        <div class="metric-heading"><h3>Thời gian học tập</h3><svg class="metric-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div>
+        <div class="metric-value">2 <small>giờ</small></div><div class="metric-target">Mục tiêu: 3 giờ/ngày</div>
+        <p class="metric-explanation">Theo dõi thời gian học tập tập trung để nâng cao kiến thức và đạt kết quả tốt ở đại học.</p><div class="progress" role="img" aria-label="2 giờ trên mục tiêu 3 giờ"><i style="width:67%"></i></div>
+      </article>
+      <article class="card metric-card" id="ielts">
+        <div class="metric-heading"><h3>IELTS Practice</h3><svg class="metric-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path><path d="M8 7h8M8 11h6"></path></svg></div>
+        <div class="metric-value">30 <small>phút</small></div><div class="metric-target">Mục tiêu: 60 phút/ngày</div>
+        <p class="metric-explanation">Duy trì luyện tập tiếng Anh mỗi ngày để hướng tới mục tiêu IELTS 7.0.</p><div class="progress" role="img" aria-label="30 phút trên mục tiêu 60 phút"><i style="width:50%"></i></div>
+      </article>
+      <article class="card metric-card" id="logistics-learning">
+        <div class="metric-heading"><h3>Logistics Learning</h3><svg class="metric-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"></path><path d="m3.5 7.7 8.5 4.5 8.5-4.5M12 12.2V21M7.5 5.3l9 4.6"></path></svg></div>
+        <div class="metric-value">1 <small>bài học</small></div><div class="metric-target">Mục tiêu: 2 bài học/ngày</div>
+        <p class="metric-explanation">Theo dõi tiến độ học tập và phát triển kiến thức chuyên ngành Logistics và Supply Chain.</p><div class="progress" role="img" aria-label="1 bài học trên mục tiêu 2 bài học"><i style="width:50%"></i></div>
+      </article>
+      <article class="card metric-card" id="personal-growth">
+        <div class="metric-heading"><h3>Personal Growth</h3><svg class="metric-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-4.4-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.6-8 11-8 11Z"></path><path d="M8 12h2l1.2-2.5L13 15l1.2-3H16"></path></svg></div>
+        <div class="metric-value">1 <small>hoạt động</small></div><div class="metric-target">Mục tiêu: 1 hoạt động/ngày</div>
+        <p class="metric-explanation">Duy trì các hoạt động phát triển bản thân để xây dựng thói quen tích cực và hướng tới mục tiêu nghề nghiệp.</p><div class="progress" role="img" aria-label="1 hoạt động trên mục tiêu 1 hoạt động"><i style="width:100%"></i></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="planner" aria-label="Ba thẻ hàng dưới">
+    
+    <div class="modules-grid">
+      <article class="card module-card featured" id="study-planner">
+        <h3>Study Planner</h3><p class="module-purpose">Quản lý lịch học, theo dõi tiến độ và sắp xếp thời gian học tập hiệu quả.</p>
+        <ul class="detail-list"><li>Lịch học và lịch thi tại trường.</li><li>Kế hoạch học tiếng Anh và IELTS.</li><li>Deadline bài tập và thuyết trình.</li></ul>
+      </article>
+      <article class="card module-card" id="career">
+        <h3>Logistics Career Development</h3><p class="module-purpose">Theo dõi quá trình phát triển kiến thức và kỹ năng để chuẩn bị cho công việc trong ngành Logistics và Supply Chain.</p>
+        <ul class="detail-list"><li>Kiến thức chuyên ngành cần học.</li><li>Kỹ năng cần phát triển.</li><li>Mục tiêu nghề nghiệp tương lai.</li></ul>
+      </article>
+      <article class="card module-card" id="tasks">
+        <h3>Personal Tasks</h3><p class="module-purpose">Quản lý các công việc cá nhân và duy trì thói quen tích cực mỗi ngày.</p>
+        <ul class="detail-list"><li>Danh sách công việc cần hoàn thành.</li><li id="habits-wellness">Thói quen tập luyện và chăm sóc bản thân.</li><li id="personal-finance">Kế hoạch chi tiêu cá nhân.</li></ul>
+      </article>
+    </div>
+  </section>
+  <p class="closing-summary">Thông tin chắc chắn nhất: Bạn là sinh viên ngành Quản trị kinh doanh đang học tập và phát triển kiến thức về Logistics và Quản lý chuỗi cung ứng. Thông tin ít chắc chắn nhất: Ngày tháng hiển thị trên thanh trên cùng chưa được bạn cung cấp. Dữ liệu cần bổ sung tiếp theo: ngày tháng muốn hiển thị trên thanh trên cùng.</p>
+</main>
+
+<footer class="quick-access" aria-label="Truy cập nhanh">
+  <a class="access-link" href="#planner"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18M8 14h3"></path></svg><span><strong>Today's Plan</strong><small>Xem nhanh kế hoạch và những công việc cần hoàn thành trong ngày.</small></span></a>
+  <a class="access-link" href="#quick-entry"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6M8 13h8M8 17h5"></path></svg><span><strong>Quick Notes</strong><small>Ghi lại nhanh ý tưởng, kiến thức hoặc thông tin quan trọng.</small></span></a>
+  <a class="access-link" href="#overview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h17"></path><path d="m7 15 4-4 3 2 6-7"></path><path d="M16 6h4v4"></path></svg><span><strong>Weekly Review</strong><small>Xem lại tiến độ học tập, mục tiêu và những việc đã hoàn thành trong tuần.</small></span></a>
+</footer>
+
+
+</div>
+
+
+<script>
+(function(){
+  const links=Array.from(document.querySelectorAll(".nav-link"));
+  const navItems=links.map(function(link){
+    const href=link.getAttribute("href");
+    return {link:link,target:href?document.getElementById(href.slice(1)):null};
+  }).filter(function(item){return item.target;});
+  const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let clickLock=null;
+  let settleTimer=0;
+  let framePending=false;
+  let animatedTarget=null;
+
+  function setActiveLink(active){
+    links.forEach(function(link){link.classList.toggle("active",link===active);});
+  }
+  function updateActiveLink(){
+    if(clickLock){setActiveLink(clickLock.link);return;}
+    const activationLine=Math.min(150,Math.max(70,window.innerHeight*.18));
+    const positioned=navItems.map(function(item){
+      return {item:item,top:item.target.getBoundingClientRect().top};
+    });
+    const passed=positioned.filter(function(entry){return entry.top<=activationLine;}).sort(function(a,b){return a.top-b.top;});
+    const current=passed.length?passed[passed.length-1].item:navItems[0];
+    setActiveLink(current.link);
+  }
+  function finishClickScroll(){
+    if(!clickLock)return;
+    const clickedLink=clickLock.link;
+    clickLock=null;
+    window.clearTimeout(settleTimer);
+    setActiveLink(clickedLink);
+  }
+  function onScroll(){
+    if(clickLock){setActiveLink(clickLock.link);return;}
+    if(framePending)return;
+    framePending=true;
+    window.requestAnimationFrame(function(){framePending=false;updateActiveLink();});
+  }
+  function animateTarget(target){
+    if(reducedMotion)return;
+    if(animatedTarget)animatedTarget.classList.remove("animate-in");
+    animatedTarget=target;
+    target.classList.remove("animate-in");
+    void target.offsetWidth;
+    target.classList.add("animate-in");
+    target.addEventListener("animationend",function(){
+      target.classList.remove("animate-in");
+      if(animatedTarget===target)animatedTarget=null;
+    },{once:true});
+  }
+
+  links.forEach(function(link){
+    link.addEventListener("click",function(){
+      const href=link.getAttribute("href");
+      const target=href?document.getElementById(href.slice(1)):null;
+      if(!target)return;
+      clickLock={link:link,target:target};
+      window.clearTimeout(settleTimer);
+      setActiveLink(link);
+      animateTarget(target);
+      settleTimer=window.setTimeout(finishClickScroll,2500);
+    });
+  });
+  window.addEventListener("scroll",onScroll,{passive:true});
+  window.addEventListener("scrollend",finishClickScroll);
+  window.addEventListener("resize",updateActiveLink);
+  updateActiveLink();
+
+  const form=document.getElementById("quick-entry-form");
+  const input=document.getElementById("quick-entry-input");
+  const status=document.getElementById("quick-entry-status");
+  form.addEventListener("submit",function(event){
+    event.preventDefault();
+    const value=input.value.trim();
+    if(!value){input.focus();return;}
+    status.textContent="Đã ghi nhận: "+value;
+    input.value="";
+    input.focus();
+  });
+  input.addEventListener("input",function(){status.textContent="";});
+
+})();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
